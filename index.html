@@ -1,1 +1,23 @@
-<html><head><title>Screeny</title><style>body{margin:0px;}#p{position:fixed;left:100px;bottom:0px;margin:0px;font-family:Arial,Helvetica,sans-serif;}#n{height:100%;width:100%;position:fixed;top:0px;left:0px;}#o{position:fixed;left:0px;bottom:0px;z-index:1;}</style></head><body><button id="o" onclick="r();">Start Capture</button><p id="p">Press F11 to fullscreen</p><video id="n" autoplay></video><script>function e(t){return document.getElementById(t);}const t=e("o");const p=e("p");const i=e("n");const s={video:{displaySurface:"window",},audio:true,};async function r(){try{i.srcObject=await navigator.mediaDevices.getDisplayMedia(s);t.remove();p.remove()}catch(err){console.error(err);}}</script></body></html>
+<html>
+    <head>
+        <title>Screeny</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="index.css" />
+    </head>
+    <body>
+        <video class="video" controls autoplay></video>
+        <div class="controls">
+            <button class="record btn">Start Capture</button>
+            <button class="stop btn">Stop Capture</button>
+        </div>
+        <div class="instructions">
+            <h1>Instructions:</h1>
+            <ol>
+                <li>Start capturing your window or screen to cast on to your TV</li>
+                <li>Use chrome's built in cast feature and cast the tab</li>
+                <li>Enjoy!</li>
+            </ol>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
